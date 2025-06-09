@@ -1,0 +1,108 @@
+.quemSouEu {
+  background-image: url(../../assets/imagens/imagem_palestrando.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay escuro */
+.quemSouEu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* sombra escura ou suavizada */
+  z-index: 1; /* sobe acima da imagem de fundo, antes do conteúdo */
+}
+
+/* Conteúdo */
+.quemSouEu_container {
+  position: relative; /* para usar z-index */
+  z-index: 2; /* fica acima do overlay */
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Imagem com efeito sutil e animação */
+.quemSouEu_image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  animation: fadeInLeft 1s ease forwards;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+/* Conteúdo com animação suave */
+.quemSouEu_content {
+  flex: 1;
+  animation: fadeInRight 1s ease forwards;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.quemSouEu_title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.quemSouEu_text {
+  font-size: 1.14rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.quemSouEu_text.destaque {
+  color: #a47541;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsivo aprimorado */
+@media (max-width: 768px) {
+  .quemSouEu_container {
+    flex-direction: column;
+  }
+
+  .quemSouEu_title {
+    font-size: 1.8rem;
+  }
+
+  .quemSouEu_text {
+    font-size: 1rem;
+  }
+}

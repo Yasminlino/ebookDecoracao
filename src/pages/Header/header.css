@@ -1,0 +1,110 @@
+:root {
+  --cor-fundo: #fff1e9;
+  --cor-titulo: #3d1c05;
+  --cor-texto: #5e5e5e;
+  --cor-botao: #a47541;
+  --cor-botao-hover: #8c5e2e;
+  --cor-botao-texto: #ffffff;
+  --fonte-principal: 'Outfit', sans-serif;
+}
+
+.header {
+  position: relative;
+  background-image: url("/assets/imagens/imagen-de-fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--cor-texto);
+  padding: 5rem 2rem;
+  z-index: 0;
+  overflow: hidden;
+  font-family: var(--fonte-principal);
+  text-align: center;
+}
+
+/* Sombra suave sobre o fundo */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 197, 148, 0.337); /* sombra clara elegante */
+  z-index: 1;
+}
+
+.destaque {
+  color: #a15500; /* Usa o mesmo tom dourado do botão */
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Conteúdo acima da sombra */
+.header_content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Título */
+.header_title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-titulo);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtítulo */
+.header_subtitle {
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão */
+.header_button {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.header_button:hover {
+  background-color: var(--cor-botao-hover);
+  transform: translateY(-3px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header {
+    padding: 6rem 1rem 4rem;
+    background-position: center top;
+  }
+
+  .header_title {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .header_subtitle {
+    font-size: 1.05rem;
+  }
+
+  .header_button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}

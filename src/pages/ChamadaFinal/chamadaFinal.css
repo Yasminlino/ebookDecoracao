@@ -1,0 +1,100 @@
+.chamadaFinalCard {
+  background-color: #f8f3ec;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chamadaFinal_card {
+  background-color: #fff;
+  border: 1px solid #e0d7ca;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  color: #2b2b2b;
+  transition: all 0.3s ease;
+}
+
+.chamadaFinal_card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a47541;
+  margin-bottom: 1.5rem;
+}
+
+.chamadaFinal_lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  text-align: left;
+}
+
+.chamadaFinal_lista li {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.chamadaFinal_lista li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #a47541;
+  font-weight: bold;
+}
+
+.preco {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.garantia {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.botaoCard {
+  background-color: #a47541;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.botaoCard:hover {
+  background-color: #8c5f2e;
+}
+
+/* 🌟 AQUI: Tela grande (desktop) */
+@media (min-width: 992px) {
+  .chamadaFinal_card {
+    max-width: 640px;
+    padding: 3rem 3rem;
+  }
+
+  .chamadaFinal_card h3 {
+    font-size: 2rem;
+  }
+
+  .chamadaFinal_lista li {
+    font-size: 1.125rem;
+  }
+
+  .preco {
+    font-size: 1.4rem;
+  }
+
+  .botaoCard {
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+  }
+}

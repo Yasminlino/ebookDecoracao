@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/ebookDecoracao/camila_decora_logo.svg" />
 
-  <!-- ✅ Preload da imagem de fundo (correto) -->
+  <!-- Preload imagem de fundo crítica -->
   <link rel="preload" as="image" href="/ebookDecoracao/assets/imagens/fundo.webp" type="image/webp" />
 
   <title>Guia de Decoração | Camila Decora</title>
@@ -29,11 +29,19 @@
     content="Transforme sua casa com estilo e economia. Um guia exclusivo para decorar com alma." />
   <meta name="twitter:image" content="https://yasminlino.github.io/ebookDecoracao/assets/imagens/og-camila.jpg" />
 
-  <!-- ✅ Google Fonts otimizadas com media=print + noscript -->
+  <!-- ✅ Google Fonts (pré-conexão e pré-carregamento com swap) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Poppins -->
+  <!-- DM Serif Display (título principal) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- Poppins (texto) -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
@@ -43,19 +51,7 @@
       rel="stylesheet" />
   </noscript>
 
-  <!-- Playfair -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-      rel="stylesheet" />
-  </noscript>
-
-  <!-- Outfit -->
+  <!-- Outfit (secundária) -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap"
@@ -64,11 +60,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <!-- DNS Prefetch GTM -->
+  <!-- GTM performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-  <!-- ✅ Google Tag Manager adiado -->
+  <!-- Google Tag Manager adiado -->
   <script>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -79,21 +75,24 @@
         gtm.async = true;
         gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WBBNTGTH';
         document.head.appendChild(gtm);
-      }, 1500); // adia o carregamento em 1.5s
+      }, 1500);
     });
   </script>
-  <script type="module" crossorigin src="/ebookDecoracao/assets/index-Br0tMjqc.js"></script>
-  <link rel="stylesheet" crossorigin href="/ebookDecoracao/assets/index-CqJYRqCc.css">
+  <script type="module" crossorigin src="/ebookDecoracao/assets/index-CWiDy3vY.js"></script>
+  <link rel="stylesheet" crossorigin href="/ebookDecoracao/assets/index-EBRaPAKQ.css">
 </head>
 
 <body>
-  <!-- GTM noscript para fallback -->
+  <!-- GTM fallback -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBBNTGTH" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
 
-  <div id="root"></div>
+  <!-- SPA root -->
+  <div id="root"></div>
+
+  <!-- Entrada principal do React -->
 </body>
 
 </html>

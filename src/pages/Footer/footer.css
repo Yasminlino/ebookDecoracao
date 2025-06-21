@@ -1,36 +1,41 @@
 .footer {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: #1c1c1c;
   color: #eaeaea;
   text-align: center;
-  padding: 2.5rem 1.2rem;
-  font-size: 1rem;
+  padding: 3rem 1.5rem;
   font-family: 'Outfit', sans-serif;
 }
 
-.footer .container {
-  max-width: 800px;
+.footer_container {
+  max-width: 720px;
   margin: 0 auto;
-  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer_logo {
-  max-width: 120px;
+  max-width: 100px;
   margin-bottom: 1rem;
+  filter: brightness(1.2);
 }
 
 .footer_title {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #f7c873;
+  margin-bottom: 0.5rem;
 }
 
-.footer p {
-  margin: 0.4rem 0;
-  color: #dcdcdc;
+.footer_slogan {
+  font-size: 1.05rem;
+  color: #ccc;
+  line-height: 1.6;
 }
 
-.footer p strong {
-  color: #f7c873;
+.footer_info p {
+  margin: 0.3rem 0;
+  color: #aaa;
 }
 
 .footer_social {
@@ -38,7 +43,7 @@
   justify-content: center;
   gap: 1.2rem;
   font-size: 1.5rem;
-  margin: 1.5rem 0;
+  margin: 1.8rem 0;
 }
 
 .footer_social a {
@@ -50,7 +55,33 @@
   color: #ffffff;
 }
 
-.credito {
-  margin-top: 1rem;
+.footer_copy p {
+  margin: 0.2rem 0;
   font-size: 0.95rem;
+  color: #bbb;
+}
+
+.credito {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #999;
+}
+
+@media (max-width: 500px) {
+  .footer_logo {
+    max-width: 80px;
+  }
+
+  .footer_title {
+    font-size: 1.4rem;
+  }
+
+  .footer_social {
+    font-size: 1.3rem;
+    gap: 1rem;
+  }
+
+  .footer_slogan {
+    font-size: 1rem;
+  }
 }

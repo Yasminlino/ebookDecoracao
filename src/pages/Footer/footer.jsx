@@ -5,18 +5,22 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer_container">
         <img
-          src="/ebookDecoracao/assets/imagens/logo.png"
+          src="/ebookDecoracao/assets/imagens/logo.webp"
           alt="Camila Decora logo"
           className="footer_logo"
         />
-        <h4 className="footer_title">Camila Decora</h4>
-        <p>Aprenda a decorar com uma profissional renomada.</p>
-        <p>CNPJ: 51.939.948/001-48</p>
 
-        <div className="footer_social">
-          <a href="https://instagram.com/camiladecora" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <h4 className="footer_title">Camila Decora</h4>
+        <p className="footer_slogan">Transformando ambientes com alma e propósito.</p>
+
+        <div className="footer_info">
+          <p><strong>CNPJ:</strong> 51.939.948/001-48</p>
+        </div>
+
+        <div className="footer_social" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/camiladecoracwb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FaInstagram />
           </a>
           <a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -24,8 +28,10 @@ export default function Footer() {
           </a>
         </div>
 
-        <p>© {new Date().getFullYear()} Camila Decora. Todos os direitos reservados.</p>
-        <p className="credito">Desenvolvido por Yasmin Lino</p>
+        <div className="footer_copy">
+          <p>© {new Date().getFullYear()} Camila Decora. Todos os direitos reservados.</p>
+          <p className="credito">Desenvolvido por Yasmin Lino</p>
+        </div>
       </div>
     </footer>
   );

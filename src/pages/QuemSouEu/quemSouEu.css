@@ -4,100 +4,91 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: 0;
-  overflow: hidden;
-  padding: 2rem 2rem;
   position: relative;
   font-family: 'Outfit', sans-serif;
+  color: #fff;
+  z-index: 0;
 }
 
-/* Overlay do pseudo-elemento (que você já tem) */
 .quemSouEu::before {
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: linear-gradient(to bottom right, rgba(58, 27, 0, 0.526), rgba(255, 229, 190, 0.2));
-  z-index: 1; /* overlay */
+  background: linear-gradient(to bottom right, rgba(58, 27, 0, 0.7), rgba(255, 229, 190, 0.15));
+  z-index: 1;
 }
 
-/* Container que envolve o conteúdo, deve estar acima do overlay */
+/* Este container precisa estar acima do overlay */
 .quemSouEu_container {
   position: relative;
-  z-index: 2; /* Está bem aqui, mantém o conteúdo acima do overlay */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-/* Certifique-se que a imagem também esteja acima do overlay, adicionando z-index na imagem */
 .quemSouEu_image {
-  position: relative; /* necessário para z-index funcionar */
-  z-index: 3; /* maior que tudo que é atrás */
+  flex: 1 1 300px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
-.quemSouEu_image img:hover,
-.quemSouEu_image img:focus {
+
+.quemSouEu_image img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.quemSouEu_image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.2);
+  filter: brightness(1.15);
 }
 
 .quemSouEu_content {
+  flex: 1 1 400px;
   position: relative;
-  z-index: 3; /* maior que o overlay */
+  z-index: 2;
 }
 
-/* Título mais forte, com efeito de sombra sutil para destaque */
 .quemSouEu_title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #4B2E2E;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  color: var(--gold-highlight);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Texto com contraste e legibilidade, com uma leve transição de cor */
 .quemSouEu_text {
-  font-size: 1.15rem;
-  color: var(--light-beige);
+  font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 1rem;
-  transition: color 0.3s;
-}
-/* Animações de fade-in para uma entrada mais suave */
-@keyframes fadeInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: var(--light-beige);
 }
 
-/* Responsividade geral: ajusta títulos e textos, e reorganiza layout em telas pequenas */
-@media(max-width: 768px){
+/* Responsivo */
+@media (max-width: 768px) {
+  .quemSouEu_container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
   .quemSouEu_title {
     font-size: 2rem;
   }
+
   .quemSouEu_text {
     font-size: 1rem;
   }
+
   .quemSouEu_image img {
-    max-width: 100%;
-  }
-  .quemSouEu_container {
-    flex-direction: column;
-    padding: 2rem;
+    max-width: 90%;
   }
 }

@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&display=swap');
+
+:root {
+  --primary-font: 'DM Serif Display', serif;
+  --secondary-font: 'Anton', sans-serif;
+  --gold-highlight: #DDAC17;
+}
+
+.anton-regular {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-style: normal;
+}
+
 .header {
   position: relative;
-  background-image: url("/assets/imagens/fundo.png");
+  background-image: url("/assets/imagens/fundo.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,11 +23,15 @@
   overflow: hidden;
   font-family: var(--primary-font);
   text-align: center;
-  /* padding-top: 8rem!important; */
 }
 
 .logo-container{
   text-align: justify;
+}
+
+.logo-container img { 
+  width: 5rem!important;
+  height: 5rem!important;
 }
 
 /* Soft overlay */
@@ -21,12 +39,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgb(32 16 0 / 54%); /* soft elegant overlay */
+  background: rgb(32 16 0 / 54%);
   z-index: 1;
 }
 
 .destaque {
-  color: var(--gold-highlight); /* Matches gold from the palette */
+  color: var(--gold-highlight);
   font-weight: 600;
   text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
 }
@@ -41,6 +59,7 @@
 
 /* Title */
 .header_title {
+  font-family: var(--primary-font);
   font-size: 2.5rem;
   font-weight: 700;
   color: white;
@@ -52,20 +71,18 @@
 
 /* Subtitle */
 .header_subtitle {
-  font-size: 1.25rem;
-  color: #fbffcd;
-  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  color: #ffffff;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
   text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
   text-align: start;
 }
 
 .left-gradient-border {
   position: relative;
-  padding-left: 1.5rem; /* espaço interno à esquerda */
+  padding-left: 1.5rem;
 }
 
 .left-gradient-border::before {
@@ -73,12 +90,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px; /* espessura da borda */
+  width: 5px;
   height: 100%;
   background: linear-gradient(180deg, #DDAC17 0%, #ECC440 25%, #FFFF95 60%, #FFFA8A 100%);
   border-radius: 4px;
 }
-
 
 /* Button */
 .header_button {

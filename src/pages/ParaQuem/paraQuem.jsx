@@ -1,16 +1,52 @@
 import React, { useEffect } from "react";
 import "./paraQuem.css";
-import { FiUser, FiDollarSign, FiZap, FiHeart, FiClipboard } from "react-icons/fi";
+import {
+  FiUser,
+  FiDollarSign,
+  FiZap,
+  FiHeart,
+  FiClipboard,
+  FiHome,
+  FiDroplet,
+  FiImage,
+  FiLayers,
+  FiSun
+} from "react-icons/fi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function ParaQuem() {
-  const itens = [
-    { icon: <FiUser />, texto: "Quer transformar seus ambientes com sofisticação" },
-    { icon: <FiDollarSign />, texto: "Já se arrependeu de alguma escolha de tecido ou cor" },
-    { icon: <FiZap />, texto: "Busca segurança e bom gosto ao decorar" },
-    { icon: <FiHeart />, texto: "Valoriza estética, funcionalidade e durabilidade" },
-    { icon: <FiClipboard />, texto: "Quer planejar sua decoração com mais consciência e menos frustração" }
+  const topicos = [
+    {
+      icon: <FiLayers />,
+      titulo: "Estilos de Decoração",
+      descricao: "Conheça os principais estilos decorativos e descubra qual combina mais com sua personalidade."
+    },
+    {
+      icon: <FiDollarSign />,
+      titulo: "Decoração Econômica",
+      descricao: "Dicas para transformar sua casa gastando pouco, com ideias criativas e acessíveis."
+    },
+    {
+      icon: <FiImage />,
+      titulo: "Composição de Paredes",
+      descricao: "Aprenda a criar galerias de quadros e composições que dão personalidade ao seu lar."
+    },
+    {
+      icon: <FiDroplet />,
+      titulo: "Teoria das Cores",
+      descricao: "Aprenda a combinar cores de forma harmoniosa para criar ambientes equilibrados e aconchegantes."
+    },
+    {
+      icon: <FiHome />,
+      titulo: "Organização de Espaços",
+      descricao: "Técnicas para aproveitar cada centímetro da sua casa, mesmo em ambientes pequenos."
+    },
+    {
+      icon: <FiSun />,
+      titulo: "Iluminação Perfeita",
+      descricao: "Descubra como a iluminação certa pode transformar completamente o ambiente da sua casa."
+    }
   ];
 
   useEffect(() => {
@@ -18,21 +54,26 @@ export default function ParaQuem() {
   }, []);
 
   return (
-    <section className="paraQuem border-brown">
+    <section className="paraQuem border-brown" aria-label="Conteúdo do E-book">
       <div className="container">
-        <h2 className="gradient-text">Este e-book é para você que:</h2>
+        <h2 className="paraQuem_title gradient-text">O que você vai aprender</h2>
         <p className="paraQuem_subtitle">
-          Descubra como transformar sua casa em um verdadeiro lar cheio de personalidade.  
+          Um guia completo para transformar sua casa com bom gosto, equilíbrio e funcionalidade.
         </p>
+
         <div className="paraQuem_cards">
-          {itens.map((item, index) => (
+          {topicos.map((item, index) => (
             <div
-              className="paraQuem_card"
+              className="paraQuem_card show"
               key={index}
               data-aos="fade-up"
+              style={{ animationDelay: `${index * 0.15 + 0.2}s` }}
             >
-              <span className="paraQuem_iconCircle">{item.icon}</span>
-              <span>{item.texto}</span>
+              <div className="paraQuem_iconCircle">{item.icon}</div>
+              <div>
+                <h3 className="playfair">{item.titulo}</h3>
+                <p>{item.descricao}</p>
+              </div>
             </div>
           ))}
         </div>

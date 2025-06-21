@@ -3,6 +3,7 @@ import "./header.css";
 
 export default function AlertaPromocao() {
   const [tempoRestante, setTempoRestante] = useState("");
+  const [versao, setVersao] = useState("A");
 
   useEffect(() => {
     const dataFim = new Date();
@@ -30,9 +31,49 @@ export default function AlertaPromocao() {
   }, []);
 
 
+  useEffect(() => {
+    const sorteio = Math.random() < 0.5 ? "A" : "B";
+    setVersao(sorteio);
+
+    // Envia para o dataLayer do Google Tag Manager
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "view_version",
+      version: sorteio
+    });
+  }, []);
+
+
+
+  const HeadlineSubHeadline1 = () => {
+    return (
+      <div className="header_content" id="versaoA">
+        <h1 className="header_title space-grotesk">
+          Transforme Sua Casa com<span className="destaque"> elegância </span> e <span className="destaque">personalidade</span>
+        </h1>
+        <p className="poppins-thin header_subtitle  left-gradient-border">
+          Descubra o estilo que combina com você e aprenda a decorar com praticidade, sem gastar muito.
+        </p>
+      </div>
+    );
+  };
+
+  const HeadlineSubHeadline2 = () => {
+    return (
+      <div className="header_content" id="versaoB">
+        <h1 className="header_title left-gradient-border">
+          Um passo a passo para transformar sua casa com <span className="destaque"> beleza </span> e <span className="destaque">praticidade.</span>
+        </h1>
+        <p className="poppins-thin header_subtitle">
+          Descubra o estilo que combina com você e aprenda a decorar com praticidade, sem gastar muito.
+        </p>
+      </div>
+    );
+  };
+
   return (
     <header className="header border-brown">
-{/* 
+      {/* 
       <div className="alerta-promocao" role="alert">
         <div className="conteudo-alerta">
           ⏰ Promoção por tempo limitado: Garanta seu e-book com desconto especial!
@@ -40,26 +81,13 @@ export default function AlertaPromocao() {
         </div>
       </div> */}
 
-
       <div className="container header_content">
         {/* Logo */}
         <div className="logo-container">
-          <img src="/ebookDecoracao/assets/imagens/logo.png" alt="Logo Camila Decora" className="logo" />
+          <img src="/ebookDecoracao/assets/imagens/logo.webp" alt="Logo Camila Decora" className="logo" />
         </div>
 
-        {/* Título */}
-        <h1 className="header_title space-grotesk">
-          Transforme Sua Casa: <span className="destaque">Descubra Seu Estilo</span> e <span className="destaque">Decore com Confiança</span>
-        </h1>
-
-        <p className="header_subtitle left-gradient-border">
-          Um guia prático e inspirador para transformar sua casa em um lar com <span className="destaque">alma</span>, <span className="destaque">beleza</span> e <span className="destaque">personalidade</span>.
-        </p>
-
-        {/* Botão */}
-        <a href="#comprar" className="header_button">
-          Quero meu guia
-        </a>
+        {versao === "A" ? <HeadlineSubHeadline1 /> : <HeadlineSubHeadline2 />}
       </div>
     </header>
   );

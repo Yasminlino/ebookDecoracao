@@ -14,8 +14,8 @@ function App() {
   return (
     <>
     <Header />
-    <ParaQuem />
     <Beneficios />
+    <ParaQuem />
     <QuemSouEu />
     <ChamadaFinal />
     <Footer />

@@ -15,6 +15,10 @@ body {
   width: 100%;
 }
 
+.border-gold{
+  border-bottom: solid 1px #a47541;
+}
+
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif !important;
   font-optical-sizing: auto;
@@ -22,9 +26,6 @@ body {
   font-style: normal;
 }
 
-.border-brown {
-  border-block-end: solid 1px #4b2802;
-}
 .button_principal {
   background-color: var(--cor-botao);
   color: var(--cor-botao-texto);
@@ -58,6 +59,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --primary-brown: #5D4037;           /* main background (rich brown) */
+  --gold-highlight: #D4AF37;          /* highlights, icons, accents */
+  --orange-primary: #F57C00;          /* primary CTA buttons (pumpkin orange) */
+  --orange-light: #FFB74D;            /* secondary buttons, hover (light orange) */
+  --light-beige: #FAF8F5;             /* main text or card background */
+  --dark-brown: #3E2723;              /* headings, text contrast */
+  --color-title: #230b07;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #DDAC17 0%, #ECC440 25%, #FFFF95 60%, #FFFA8A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.bottom-gradient-border {
+  position: relative;
+  padding-bottom: 1.5rem; /* espaço interno na parte inferior */
+}
+
+.bottom-gradient-border::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* largura total */
+  height: 1px; /* espessura da borda */
+  background: linear-gradient(90deg, #DDAC17 0%, #ECC440 25%, #FFFF95 60%, #FFFA8A 100%);
+  border-radius: 4px;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -65,7 +101,7 @@ a {
 }
 
 a:hover {
-  color: #535bf2;
+  color: #ffbc03;
 }
 
 body {

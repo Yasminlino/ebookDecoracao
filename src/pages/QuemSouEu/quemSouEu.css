@@ -1,84 +1,67 @@
 .quemSouEu {
-  background-image: url(../../assets/imagens/imagem_palestrando.jpg);
+  background-image: url("/ebookDecoracao/assets/imagens/imagem-palestrando.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 8rem 2rem;
-  position: relative;
+  background-attachment: fixed;
+  z-index: 0;
   overflow: hidden;
+  padding: 2rem 2rem;
+  position: relative;
+  font-family: 'Outfit', sans-serif;
 }
 
-/* overlay escuro */
+/* Overlay do pseudo-elemento (que você já tem) */
 .quemSouEu::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* sombra escura ou suavizada */
-  z-index: 1; /* sobe acima da imagem de fundo, antes do conteúdo */
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(to bottom right, rgba(58, 27, 0, 0.526), rgba(255, 229, 190, 0.2));
+  z-index: 1; /* overlay */
 }
 
-/* Conteúdo */
+/* Container que envolve o conteúdo, deve estar acima do overlay */
 .quemSouEu_container {
-  position: relative; /* para usar z-index */
-  z-index: 2; /* fica acima do overlay */
-  background-color: rgba(255, 255, 255, 0.97);
-  border-radius: 1.5rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Está bem aqui, mantém o conteúdo acima do overlay */
 }
 
-/* Imagem com efeito sutil e animação */
-.quemSouEu_image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 1rem;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-  animation: fadeInLeft 1s ease forwards;
-  opacity: 0;
-  transform: translateX(-30px);
+/* Certifique-se que a imagem também esteja acima do overlay, adicionando z-index na imagem */
+.quemSouEu_image {
+  position: relative; /* necessário para z-index funcionar */
+  z-index: 3; /* maior que tudo que é atrás */
+}
+.quemSouEu_image img:hover,
+.quemSouEu_image img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.2);
 }
 
-/* Conteúdo com animação suave */
 .quemSouEu_content {
-  flex: 1;
-  animation: fadeInRight 1s ease forwards;
-  opacity: 0;
-  transform: translateX(30px);
+  position: relative;
+  z-index: 3; /* maior que o overlay */
 }
 
+/* Título mais forte, com efeito de sombra sutil para destaque */
 .quemSouEu_title {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #2b2b2b;
+  color: #4B2E2E;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
+/* Texto com contraste e legibilidade, com uma leve transição de cor */
 .quemSouEu_text {
-  font-size: 1.14rem;
-  color: #444;
+  font-size: 1.15rem;
+  color: var(--light-beige);
   line-height: 1.8;
   margin-bottom: 1rem;
   transition: color 0.3s;
 }
-
-.quemSouEu_text.destaque {
-  color: #a47541;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-/* Animações */
+/* Animações de fade-in para uma entrada mais suave */
 @keyframes fadeInLeft {
   to {
     opacity: 1;
@@ -91,18 +74,30 @@
     transform: translateX(0);
   }
 }
-
-/* Responsivo aprimorado */
-@media (max-width: 768px) {
-  .quemSouEu_container {
-    flex-direction: column;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* Responsividade geral: ajusta títulos e textos, e reorganiza layout em telas pequenas */
+@media(max-width: 768px){
   .quemSouEu_title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-
   .quemSouEu_text {
     font-size: 1rem;
+  }
+  .quemSouEu_image img {
+    max-width: 100%;
+  }
+  .quemSouEu_container {
+    flex-direction: column;
+    padding: 2rem;
   }
 }

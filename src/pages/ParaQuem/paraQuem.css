@@ -1,13 +1,5 @@
-:root {
-  --cor-card: #ffffff;
-  --cor-card-hover: #fef0e6;
-  --cor-texto: #2b2b2b;
-  --cor-icone: #a47541;
-  --cor-fundo-icone: #f8f5f2;
-}
-
 .paraQuem {
-  background: linear-gradient(180deg, #fff1e9 0%, #f9d8c4 100%);
+  background: linear-gradient(135deg, rgba(86, 44, 1, 0.99), #4B3628);
   padding: 5rem 2rem;
   text-align: center;
 }
@@ -15,13 +7,17 @@
 .paraQuem_title {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--cor-texto);
+  color: linear-gradient(90deg, #DDAC17 0%, #ECC440 25%, #FFFF95 60%, #FFFA8A 100%);
   margin-bottom: 1.2rem;
+}
+
+.paraQuem_subtitle{
+  color: white;
 }
 
 .paraQuem_desc {
   font-size: 1.15rem;
-  color: #4b4b4b;
+  color: var(--dark-brown);
   margin-bottom: 3rem;
   max-width: 740px;
   margin-inline: auto;
@@ -39,8 +35,8 @@
 }
 
 .paraQuem_card {
-  background-color: var(--cor-card);
-  color: var(--cor-texto);
+  background-color: var(--light-beige);
+  color: var(--dark-brown);
   border-radius: 1.75rem;
   padding: 2.4rem 1.8rem;
   display: flex;
@@ -49,20 +45,26 @@
   font-size: 1.1rem;
   line-height: 1.75;
   box-shadow: 0 8px 32px rgba(164, 117, 65, 0.08), 0 2px 8px rgba(0,0,0,0.04);
-  animation: fadeUp 0.7s ease forwards;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.3s ease;
 }
 
+.paraQuem_card.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeUp 0.7s ease forwards;
+}
+
 .paraQuem_card:hover {
-  background-color: var(--cor-card-hover);
+  background-color: #dfb93ec8;
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 16px 48px rgba(164, 117, 65, 0.15), 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 16px 48px rgba(218, 129, 26, 0.15), 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .paraQuem_iconCircle {
-  color: var(--cor-icone);
+  color: var(--dark-brown);
+  background-color: var(--gold-highlight);
   font-size: 2.2rem;
   padding: 1rem;
   border-radius: 50%;
@@ -70,7 +72,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: var(--cor-fundo-icone);
   box-shadow: 0 3px 10px rgba(164, 117, 65, 0.1);
   transition: transform 0.25s, box-shadow 0.25s;
 }
@@ -78,13 +79,6 @@
 .paraQuem_card:hover .paraQuem_iconCircle {
   transform: scale(1.1) rotate(-5deg);
   box-shadow: 0 5px 20px rgba(164, 117, 65, 0.15);
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,35 +10,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
   <!-- Preconnect para performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager - carregado de forma adiada -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GT-5MRG89BK'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GT-5MRG89BK');
-  </script>
-  <!-- End Google Tag Manager -->
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        // Adiciona o script GTM
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=G-8NL2TSYVST';
+        script.async = true;
+        document.head.appendChild(script);
+
+        // Inicializa o GTAG após o script carregar
+        script.onload = function () {
+          gtag('js', new Date());
+          gtag('config', 'G-8NL2TSYVST');
+        };
+      }, 3000);
+    });
+  </script>
   <script type="module" crossorigin src="/ebookDecoracao/assets/index-BrVmTNkp.js"></script>
   <link rel="stylesheet" crossorigin href="/ebookDecoracao/assets/index-CKBtPPSc.css">
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GT-5MRG89BK" height="0" width="0"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=G-8NL2TSYVST" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <div id="root"></div>
-
 </body>
 
 </html>

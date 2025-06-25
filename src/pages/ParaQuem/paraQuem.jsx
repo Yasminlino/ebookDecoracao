@@ -71,7 +71,7 @@ export default function ParaQuem() {
             >
               <div className="paraQuem_iconCircle">{item.icon}</div>
               <div>
-                <h3 className="playfair">{item.titulo}</h3>
+                <h3>{item.titulo}</h3>
                 <p>{item.descricao}</p>
               </div>
             </div>

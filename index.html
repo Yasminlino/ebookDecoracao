@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="pt-">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/camila_decora_logo.svg" />
 
-  <!-- Título da página -->
+  <!-- Preload imagem de fundo crítica -->
+  <link rel="preload" as="image" href="/assets/imagens/fundo.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/ebookDecoracao/assets/imagens/logo.webp" type="image/webp" />
+
   <title>Guia de Decoração | Camila Decora</title>
 
-  <!-- Meta Description (SEO) -->
   <meta name="description"
     content="Descubra como transformar sua casa com elegância, estilo e baixo custo. Um guia para decorar com personalidade e autenticidade." />
 
-  <!-- Open Graph (Facebook, WhatsApp etc) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Guia de Decoração | Camila Decora" />
   <meta property="og:description"
     content="Aprenda como decorar sua casa com estilo e praticidade. Inspire-se com ideias acessíveis e cheias de personalidade." />
@@ -30,40 +30,68 @@
     content="Transforme sua casa com estilo e economia. Um guia exclusivo para decorar com alma." />
   <meta name="twitter:image" content="https://yasminlino.github.io/ebookDecoracao/assets/imagens/og-camila.jpg" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <!-- ✅ Google Fonts (pré-conexão e pré-carregamento com swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Performance (preconnect/dns-prefetch) -->
+  <!-- DM Serif Display (título principal) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- Poppins (texto) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <!-- Outfit (secundária) -->
+  <!-- Preload da fonte principal -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap">
+  </noscript>
+
+
+  <!-- GTM performance -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager adiado -->
   <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WBBNTGTH' + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-WBBNTGTH');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WBBNTGTH';
+        document.head.appendChild(gtm);
+      }, 1500);
+    });
   </script>
-  <!-- End Google Tag Manager -->
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
+  <!-- GTM fallback -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBBNTGTH" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
+  <!-- SPA root -->
   <div id="root"></div>
+
+  <!-- Entrada principal do React -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./chamadaFinal.css";
 import { FaCheckCircle } from "react-icons/fa";
 
-export default function ChamadaFinal() {
+export default function ChamadaFinal({ timeLeft }) {
+  const [versao] = useState(() => (Math.random() < 0.5 ? "A" : "B"));
+
+  const alertaAtivo =
+    timeLeft &&
+    (timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0);
+
   const itens = [
     "Conteúdo direto e prático para você aplicar hoje",
     "Dicas que funcionam para qualquer estilo de casa",
     "Organize sua decoração com confiança e leveza",
     "Evite erros comuns e economize tempo e dinheiro",
     "Visual bonito, leve e fácil de ler",
-    "Acesso imediato ao PDF após a compra"
+    "Acesso imediato ao PDF após a compra",
   ];
 
   const linkDeCheckout = "https://chk.eduzz.com/8WPAAEPYWP";
@@ -19,12 +25,18 @@ export default function ChamadaFinal() {
       <div className="chamadaFinal_card estilo-modernizado" data-aos="fade-up">
         <div className="chamadaFinal_topo">
           <h3 className="chamadaFinal_titulo">Guia Prático de Decoração</h3>
-          <p className="chamadaFinal_subtitulo">Edição Digital • 17 páginas</p>
+          <p className="chamadaFinal_subtitulo">Edição Digital</p>
         </div>
 
         <div className="chamadaFinal_preco">
-          <span className="preco-antigo">De R$ 47,00</span>
-          <span className="preco-promocional">Por R$ 17,00</span>
+          {alertaAtivo ? (
+            <>
+              <span className="preco-antigo">De R$ 57,00</span>
+              <span className="preco-promocional">Por R$ 27,00</span>
+            </>
+          ) : (
+            <span className="preco-normal">R$ 57,00</span>
+          )}
           <p className="pagamento-unico">Pagamento único. Acesso vitalício ao PDF.</p>
         </div>
 
@@ -44,13 +56,12 @@ export default function ChamadaFinal() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
               event: "cta_click",
-              version: versao // envia junto qual versão estava visível
+              version: versao,
             });
           }}
         >
           Quero o Guia Agora
         </a>
-
       </div>
     </section>
   );

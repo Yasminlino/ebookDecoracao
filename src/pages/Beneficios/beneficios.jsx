@@ -24,7 +24,7 @@ export default function Beneficios() {
     <section className="beneficios bottom-gradient-border" aria-label="Benefícios do E-book">
       <div className="container">
         <h2 className="beneficios_title">
-          O que você vai conquistar com este e-book
+          O que você vai conquistar com este material?
         </h2>
         <p className="beneficios_subtitle poppins-thin">
           Uma transformação real na sua forma de enxergar e viver a decoração – mesmo que você não saiba por onde começar.

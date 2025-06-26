@@ -127,6 +127,45 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
+.botoes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* espaçamento entre os botões */
+  margin-top: 2rem;
+}
+
+.botao-principal {
+  background-color: #5b3b2f; /* marrom escuro */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.botao-principal:hover {
+  background-color: #42281f;
+}
+
+.botao-suporte {
+  background-color: #d4f5d2; /* verde suave */
+  color: #1f7a1f;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.botao-suporte:hover {
+  background-color: #c0ebbe;
+}
+
+
 /* Gatilho visual adicional (pulsar leve no carregamento) */
 @keyframes pulse {
   0% { transform: scale(1); }

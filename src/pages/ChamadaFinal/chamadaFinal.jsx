@@ -15,7 +15,7 @@ export default function ChamadaFinal({ timeLeft }) {
     "Organize sua decoração com confiança e leveza",
     "Evite erros comuns e economize tempo e dinheiro",
     "Visual bonito, leve e fácil de ler",
-    "Acesso imediato ao PDF após a compra",
+    "Acesso imediato após a compra",
   ];
 
   const linkDeCheckout = "https://chk.eduzz.com/8WPAAEPYWP";
@@ -37,7 +37,7 @@ export default function ChamadaFinal({ timeLeft }) {
           ) : (
             <span className="preco-normal">R$ 57,00</span>
           )}
-          <p className="pagamento-unico">Pagamento único. Acesso vitalício ao PDF.</p>
+          <p className="pagamento-unico">Pagamento único. Acesso vitalício.</p>
         </div>
 
         <ul className="chamadaFinal_lista">
@@ -63,6 +63,12 @@ export default function ChamadaFinal({ timeLeft }) {
           Quero o Guia Agora
         </a>
       </div>
+      <div class="botoes-container">
+        <a href="https://wa.me/5511999999999" class="botao-suporte">
+          Ainda com dúvidas? Fale com nosso suporte!
+        </a>
+      </div>
+
     </section>
   );
 }

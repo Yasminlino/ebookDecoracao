@@ -35,6 +35,8 @@ export default function Beneficios() {
             src="/assets/imagens/tablet.webp"
             className="beneficio_imagem"
             alt="Ilustração do tablet"
+            width="15rem"
+            height="17rem"
           />
         </div>
 
@@ -47,7 +49,6 @@ export default function Beneficios() {
               tabIndex={0}
               aria-label={`Benefício: ${texto}`}
               data-aos={index % 2 === 0 ? "fade-up" : "fade-right"}
-              style={{ animationDelay: `${0.3 + index * 0.2}s` }}
             >
               <FaCheckCircle className="beneficio_icone" aria-hidden="true" />
               <span dangerouslySetInnerHTML={{ __html: texto.replace(/(funcionais|bonitos|acolhedores|gastos desnecessários|segurança)/gi, "<strong>$1</strong>") }}></span>

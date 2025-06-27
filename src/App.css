@@ -1,8 +1,7 @@
 .logo {
   height: 10rem;
   width: 10rem;
-  will-change: filter;
-  transition: filter 300ms;
+  transform: scale(1);
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

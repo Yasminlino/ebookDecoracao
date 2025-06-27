@@ -19,6 +19,12 @@ html, body {
   box-sizing: inherit;
 }
 
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('/path/para/dm-serif-display.woff2') format('woff2');
+  font-display: swap;
+}
+
 
 html,
 body {

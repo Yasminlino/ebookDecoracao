@@ -39,7 +39,6 @@ export default function ChamadaFinal({ timeLeft }) {
             <span className="preco-normal">R$ 57,90</span>
           )}
           <p className="pagamento-unico">Pagamento único. Acesso vitalício.</p>
-          <p className="pagamento-unico">Pagamento único. Acesso vitalício.</p>
         </div>
 
         <ul className="chamadaFinal_lista">

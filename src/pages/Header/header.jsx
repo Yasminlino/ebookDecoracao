@@ -20,18 +20,16 @@ export default function Header({ timeLeft }) {
 
       {alertaAtivo && (
         <div className="alerta-topo" ref={alertaRef}>
-          <span role="img" aria-label="Relógio">⏰</span> Oferta por tempo limitado: <strong>Garanta seu acesso com desconto!</strong>
+          ⏰ Oferta por tempo limitado: <strong>Garanta seu acesso com desconto!</strong>
           <span className="contador">
-            <span role="img" aria-label="Calendário">📅</span> {timeLeft.days} dias, <span role="img" aria-label="Relógio de areia">⌛</span> {timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}
+            📅 {timeLeft.days} dias, ⌛ {timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}
           </span>
         </div>
       )}
 
       <header
         className="header border-brown"
-        style={alertaAtivo ? { paddingTop: `${alertaHeight}px` } : {}}
       >
-
         <div className="container header_content">
           <div className="logo-container">
             <img
@@ -40,7 +38,7 @@ export default function Header({ timeLeft }) {
               className="logo"
               width="80"
               height="80"
-              loading="lazy"
+              loading="eager"
               fetchpriority="low"
             />
           </div>

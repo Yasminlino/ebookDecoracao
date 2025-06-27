@@ -5,6 +5,7 @@
   text-align: center;
   font-family: var(--primary-font, 'Outfit', sans-serif);
   position: relative;
+  min-height: 80vh;
 }
 
 .beneficios_title {

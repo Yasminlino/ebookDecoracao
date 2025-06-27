@@ -7,9 +7,13 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer_container">
         <img
-          src="/assets/imagens/logo.webp"
-          alt="Camila Decora logo"
+          src="/assets/imagens/logo.webp"          
+          alt="Logo Camila Decora"
           className="footer_logo"
+          width="80"
+          height="80"
+          loading="lazy"
+          fetchpriority="low"
         />
 
         <h4 className="footer_title">Camila Decora</h4>

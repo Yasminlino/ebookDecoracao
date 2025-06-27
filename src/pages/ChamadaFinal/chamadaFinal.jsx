@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./chamadaFinal.css";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 
 export default function ChamadaFinal({ timeLeft }) {
   const [versao] = useState(() => (Math.random() < 0.5 ? "A" : "B"));
@@ -63,17 +63,18 @@ export default function ChamadaFinal({ timeLeft }) {
           Quero o Guia Agora
         </a>
       </div>
-      <div class="botoes-container">
+      <div className="botoes-container">
         <a
           href="https://wa.me/554198130464?text=Ol%C3%A1!%20Pode%20me%20passar%20mais%20detalhes%20sobre%20o%20guia%20de%20decora%C3%A7%C3%A3o%3F"
           target="_blank"
           rel="noopener noreferrer"
           className="botao-suporte"
         >
+          <FaWhatsapp style={{ marginRight: "0.5rem", verticalAlign: "middle" }} />
           Ainda com dúvidas? Fale com nosso suporte!
         </a>
-
       </div>
+
 
     </section>
   );

@@ -17,7 +17,7 @@
   min-height: 50vh;
 
   /* ✅ Fundo por CSS, não <img> */
-  background-image: url("/ebookDecoracao/assets/imagens/fundo.webp");
+  background-image: url("/assets/imagens/fundo.webp");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;

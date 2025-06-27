@@ -35,7 +35,7 @@ export default function Header({ timeLeft }) {
         <div className="container header_content">
           <div className="logo-container">
             <img
-              src="/ebookDecoracao/assets/imagens/logo.webp"
+              src="/assets/imagens/logo.webp"
               alt="Logo Camila Decora"
               className="logo"
               width="80"

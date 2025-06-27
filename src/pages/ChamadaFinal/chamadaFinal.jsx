@@ -15,10 +15,10 @@ export default function ChamadaFinal({ timeLeft }) {
     "Organize sua decoração com confiança e leveza",
     "Evite erros comuns e economize tempo e dinheiro",
     "Visual bonito, leve e fácil de ler",
-    "Acesso imediato ao PDF após a compra",
+    "Acesso imediato após a compra",
   ];
 
-  const linkDeCheckout = "https://chk.eduzz.com/8WPAAEPYWP";
+  const linkDeCheckout = "https://sun.eduzz.com/8WPAAEPYWP?cupom=GUIADECORACAO";
 
   return (
     <section className="chamadaFinalCard" id="comprar">
@@ -31,13 +31,13 @@ export default function ChamadaFinal({ timeLeft }) {
         <div className="chamadaFinal_preco">
           {alertaAtivo ? (
             <>
-              <span className="preco-antigo">De R$ 57,00</span>
-              <span className="preco-promocional">Por R$ 27,00</span>
+              <span className="preco-antigo">De R$ 57,90</span>
+              <span className="preco-promocional">Por R$ 27,90</span>
             </>
           ) : (
-            <span className="preco-normal">R$ 57,00</span>
+            <span className="preco-normal">R$ 57,90</span>
           )}
-          <p className="pagamento-unico">Pagamento único. Acesso vitalício ao PDF.</p>
+          <p className="pagamento-unico">Pagamento único. Acesso vitalício.</p>
         </div>
 
         <ul className="chamadaFinal_lista">
@@ -63,6 +63,18 @@ export default function ChamadaFinal({ timeLeft }) {
           Quero o Guia Agora
         </a>
       </div>
+      <div class="botoes-container">
+        <a
+          href="https://wa.me/554198130464?text=Ol%C3%A1!%20Pode%20me%20passar%20mais%20detalhes%20sobre%20o%20guia%20de%20decora%C3%A7%C3%A3o%3F"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="botao-suporte"
+        >
+          Ainda com dúvidas? Fale com nosso suporte!
+        </a>
+
+      </div>
+
     </section>
   );
 }

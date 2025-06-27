@@ -13,7 +13,7 @@ export default function QuemSouEu() {
       <div className="quemSouEu_container">
         <div className="quemSouEu_image" data-aos="fade-right">
           <img
-            src="/ebookDecoracao/assets/imagens/imagem_perfil.webp"
+            src="/assets/imagens/imagem_perfil.webp"
             alt="Foto da Camila decoradora"
             loading="lazy"
           />

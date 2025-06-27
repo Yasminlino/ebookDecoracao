@@ -113,9 +113,6 @@ a {
   text-decoration: inherit;
 }
 
-a:hover {
-  color: #ffbc03;
-}
 
 body {
   margin: 0;

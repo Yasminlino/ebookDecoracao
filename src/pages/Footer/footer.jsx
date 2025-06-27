@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import "./footer.css";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer_container">
         <img
-          src="/ebookDecoracao/assets/imagens/logo.webp"
+          src="/assets/imagens/logo.webp"
           alt="Camila Decora logo"
           className="footer_logo"
         />
@@ -22,9 +22,6 @@ export default function Footer() {
         <div className="footer_social" aria-label="Redes sociais">
           <a href="https://www.instagram.com/camiladecoracwb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FaInstagram />
-          </a>
-          <a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp />
           </a>
         </div>
 

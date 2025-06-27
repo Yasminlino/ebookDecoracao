@@ -32,7 +32,7 @@ export default function Beneficios() {
 
         <div className="glow-wrapper">
           <img
-            src="/ebookDecoracao/assets/imagens/tablet.webp"
+            src="/assets/imagens/tablet.webp"
             className="beneficio_imagem"
             alt="Ilustração do tablet"
           />

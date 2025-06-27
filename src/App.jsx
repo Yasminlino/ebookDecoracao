@@ -9,7 +9,7 @@ import ChamadaFinal from './pages/ChamadaFinal/chamadaFinal'
 import './App.css'
 
 function App() {
-  const promoEndDate = new Date('2025-06-26');
+  const promoEndDate = new Date('2025-06-27');
 promoEndDate.setDate(promoEndDate.getDate() + 7);
   const [timeLeft, setTimeLeft] = useState({
     days: '00',

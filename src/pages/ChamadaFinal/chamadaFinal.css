@@ -2,6 +2,7 @@
   background: #f5f0ea;
   padding: 4rem 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   font-family: 'Outfit', sans-serif;
 }
@@ -164,7 +165,6 @@
 .botao-suporte:hover {
   background-color: #c0ebbe;
 }
-
 
 /* Gatilho visual adicional (pulsar leve no carregamento) */
 @keyframes pulse {

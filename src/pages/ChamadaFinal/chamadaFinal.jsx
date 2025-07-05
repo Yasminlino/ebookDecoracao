@@ -19,7 +19,10 @@ export default function ChamadaFinal({ timeLeft }) {
     "Acesso imediato após a compra",
   ];
 
-  const linkDeCheckout = "https://sun.eduzz.com/8WPAAEPYWP?cupom=GUIADECORACAO";
+  const linkBase = "https://sun.eduzz.com/8WPAAEPYWP";
+
+  const cupomPromocional = "GUIADECORACAO";
+  const linkDeCheckout = alertaAtivo ? `${linkBase}?cupom=${cupomPromocional}` : linkBase;
 
   return (
     <section className="chamadaFinalCard" id="comprar">
@@ -36,7 +39,7 @@ export default function ChamadaFinal({ timeLeft }) {
               <span className="preco-promocional">Por R$ 27,90</span>
             </>
           ) : (
-            <span className="preco-normal">R$ 57,90</span>
+            <span className="preco-promocional">R$ 57,90</span>
           )}
           <p className="pagamento-unico">Pagamento único. Acesso vitalício.</p>
         </div>

@@ -7,7 +7,17 @@ export default function Header({ timeLeft }) {
   const [alertaHeight, setAlertaHeight] = useState(0);
   const alertaRef = useRef(null);
 
-  const alertaAtivo = timeLeft && timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0;
+  const alertaAtivo =
+    timeLeft && (timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0);
+
+  // Envia a versão para o dataLayer ao carregar
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "versao_detectada",
+      versao: versao,
+    });
+  }, [versao]);
 
   useEffect(() => {
     if (alertaAtivo && alertaRef.current) {
@@ -17,7 +27,6 @@ export default function Header({ timeLeft }) {
 
   return (
     <>
-
       {alertaAtivo && (
         <div className="alerta-topo" ref={alertaRef}>
           ⏰ Oferta por tempo limitado: <strong>Garanta seu acesso com desconto!</strong>
@@ -27,9 +36,7 @@ export default function Header({ timeLeft }) {
         </div>
       )}
 
-      <header
-        className="header border-brown"
-      >
+      <header className="header border-brown">
         <div className="container header_content">
           <div className="logo-container">
             <img

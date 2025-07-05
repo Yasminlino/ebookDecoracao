@@ -10,7 +10,9 @@ import './App.css'
 
 function App() {
   const promoEndDate = new Date('2025-06-27');
-promoEndDate.setDate(promoEndDate.getDate() + 7);
+  const diasPromocao = 0;
+
+  promoEndDate.setDate(promoEndDate.getDate() + diasPromocao);
   const [timeLeft, setTimeLeft] = useState({
     days: '00',
     hours: '00',
